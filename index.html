@@ -2,84 +2,87 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Mamii's Birthday Surprise ❤️</title>
+<title>Happy Birthday Mamii ❤️</title>
+
 <style>
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#ffd1dc,#ffe6f0);
   overflow-x:hidden;
 }
 
-/* Landing Intro Screen */
+/* Intro Screen */
 #landing{
   position:fixed;
   width:100%;
   height:100%;
-  background: linear-gradient(135deg,#ffdde1,#ee9ca7);
-  color:white;
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4);
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
+  color:white;
   z-index:10;
-  transition: all 1s ease;
+  animation: fadeIn 2s ease;
 }
 
 #landing h1{
-  font-size:50px;
-  margin-bottom:20px;
+  font-size:48px;
+  margin-bottom:15px;
 }
 
 #landing p{
-  font-size:22px;
-  margin-bottom:40px;
+  font-size:20px;
+  margin-bottom:30px;
 }
 
 #landing button{
-  padding:15px 30px;
-  font-size:20px;
+  padding:14px 28px;
   border:none;
-  border-radius:12px;
-  background:#ff4d88;
-  color:white;
+  border-radius:10px;
+  background:white;
+  color:#ff4d88;
+  font-size:18px;
   cursor:pointer;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
   transition:0.3s;
 }
 
 #landing button:hover{
-  transform: scale(1.05);
+  transform:scale(1.05);
 }
 
-/* Main Website */
+/* Main site */
 #main{
   display:none;
   text-align:center;
-  background: linear-gradient(135deg,#ffdde1,#fff0f5);
-  padding:40px;
+  padding:40px 20px;
+}
+
+.hero{
+  color:#ff2e63;
+  margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:50px;
-  margin-bottom:10px;
-  color:white;
+  font-size:42px;
 }
 
 #countdown{
-  font-size:32px;
-  margin-top:15px;
+  font-size:26px;
+  margin-top:10px;
   font-weight:bold;
-  color:white;
 }
 
 .section{
-  background:white;
+  max-width:850px;
   margin:40px auto;
+  background:white;
   padding:30px;
-  max-width:800px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+  animation: fadeUp 1s ease;
 }
 
 .timeline{
@@ -87,70 +90,90 @@ body{
 }
 
 .event{
+  margin-bottom:18px;
+  padding-left:15px;
   border-left:4px solid #ff4d88;
-  padding-left:20px;
-  margin-bottom:20px;
+}
+
+.gallery img,
+.gallery video{
+  width:230px;
+  border-radius:12px;
+  margin:10px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.15);
 }
 
 button.mainBtn{
   padding:12px 25px;
   border:none;
   border-radius:8px;
-  font-size:16px;
-  cursor:pointer;
   background:#ff4d88;
   color:white;
-  margin-top:20px;
+  cursor:pointer;
+  font-size:16px;
 }
 
-#surprise, #finalMessage{
+#surprise,#finalMessage{
   display:none;
-  margin-top:20px;
-  font-size:20px;
+  margin-top:15px;
+  font-size:19px;
 }
 
-.gallery img{
-  width:220px;
-  border-radius:12px;
-  margin:10px;
-}
-
+/* Hearts */
 .heart{
   position:fixed;
-  bottom:-20px;
-  font-size:18px;
-  animation:floatUp 6s linear infinite;
+  bottom:-10px;
+  animation: floatUp 7s linear infinite;
 }
 
 @keyframes floatUp{
   from{transform:translateY(0);opacity:1;}
   to{transform:translateY(-100vh);opacity:0;}
 }
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 </style>
 </head>
+
 <body>
 
-<!-- Landing Intro Screen -->
+<!-- Intro -->
 <div id="landing">
-<h1>Hi Mamii ❤️</h1>
-<p>I made something very special just for you…<br>Click below to see your birthday surprise 🥰</p>
-<button onclick="enterSite()">Open Surprise 🎉</button>
+<h1>Kuzuzangpo la My lovely Mamii ❤️</h1>
+<p>I made something special just for you</p>
+<button onclick="enterSite()">Open Your Surprise 🎁</button>
 </div>
 
 <!-- Main Website -->
 <div id="main">
+
 <div class="hero">
 <h1>Happy Birthday Mamii 🎉</h1>
 <div id="countdown"></div>
 </div>
 
 <div class="section">
-<h2>Open Your Surprise ❤️</h2>
+<h2>A Message For You</h2>
 <button class="mainBtn" onclick="showSurprise()">Click Here</button>
 <div id="surprise">
 <p>
-Happy Birthday my love ❤️<br>
-Even if we are far apart, you are always in my heart.
+Happy Birthday my love ❤️<br><br>
+Even though distance separates us,<br>
+my heart is always with you.
 </p>
 </div>
 </div>
@@ -158,114 +181,140 @@ Even if we are far apart, you are always in my heart.
 <div class="section">
 <h2>Our Love Story</h2>
 <div class="timeline">
+
 <div class="event">
 <h3>How We Met</h3>
 <p>
 It was around the 6th period when I attended my first class.
 Everyone was staring at me, and one of them was you.
-You had a crush on me from that first glance.
-You fell first, but I fell harder.
+You fell first… but I fell harder (hehe).
 </p>
 </div>
+
 <div class="event">
 <h3>When I Knew</h3>
 <p>
-I realized how much you meant to me when I felt jealous
-seeing you ask another boy for help instead of asking me.
+I realized how important you were to me
+when I felt jealous seeing you ask another boy for help.
 That’s when I knew my feelings were real.
 </p>
 </div>
+
 <div class="event">
 <h3>Precious Memories</h3>
 <p>
-Our first date at the park and the diary letters we used
-to exchange are memories I will always treasure.
+Our first date at the park and the diary letters
+we used to exchange will always stay in my heart(Ngomba Ra Enn La).
 </p>
 </div>
+
 <div class="event">
-<h3>The Most Special Day</h3>
+<h3>The Special Day</h3>
 <p>
-We got married on 24 February 2025 —  
-one of the happiest days of my life.
+We got married on 24 February 2025 —
+the happiest moment of my life(Sure Tay).
 </p>
 </div>
+
 <div class="event">
-<h3>Us Today</h3>
+<h3>Today</h3>
 <p>
-We may fight sometimes, but we cannot imagine leaving each other.
+We may fight sometimes tay mo,
+but we never think about leaving each other.
 Our bond grows stronger every day.
 </p>
 </div>
+
 <div class="event">
 <h3>Our Future</h3>
 <p>
-I promise to fulfill your wishes, be a better partner,  
+I promise to fulfill your wishes,
+be a better partner,
 and build a beautiful family together.
 </p>
 </div>
+
 </div>
 </div>
 
 <div class="section gallery">
 <h2>Our Memories 📸</h2>
+
+<!-- Photo -->
 <img src="photo1.jpg">
-<img src="photo2.jpg">
+
+<!-- Second Photo or Video -->
+<video controls autoplay muted loop>
+<source src="video1.mp4" type="video/mp4">
+</video>
+
 </div>
 
 <div class="section">
 <h2>One Last Message</h2>
-<button class="mainBtn" onclick="showFinal()">Open Final Message</button>
+<button class="mainBtn" onclick="showFinal()">Open</button>
+
 <div id="finalMessage">
 <p>
-No matter how far we are, you will always be my home. ❤️<br>
-Thank you for loving me, choosing me, and being my life partner.<br>
-I love you forever Mamii.<br><br>— Tandin
+No matter how far we are,<br>
+you will always be my home ❤️<br><br>
+I love you forever Mamii.<br>
+— Tandin
 </p>
 </div>
 </div>
 
 <audio autoplay loop>
-<source src="music.mp3" type="audio/mpeg">
+<source src="music.mp3">
 </audio>
+
 </div>
 
 <script>
-// Landing to Main Website
 function enterSite(){
-  document.getElementById("landing").style.display="none";
-  document.getElementById("main").style.display="block";
+document.getElementById("landing").style.display="none";
+document.getElementById("main").style.display="block";
 }
 
-// Countdown
+/* Countdown */
 var birthday = new Date("March 3, 2026 00:00:00").getTime();
 var timer = setInterval(function(){
-  var now = new Date().getTime();
-  var distance = birthday - now;
-  var days = Math.floor(distance/(1000*60*60*24));
-  var hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-  var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-  var seconds = Math.floor((distance%(1000*60))/1000);
-  document.getElementById("countdown").innerHTML=days+"d "+hours+"h "+minutes+"m "+seconds+"s";
-  if(distance<0){
-    clearInterval(timer);
-    document.getElementById("countdown").innerHTML="It's Your Day ❤️";
-  }
+var now = new Date().getTime();
+var distance = birthday - now;
+
+var days = Math.floor(distance/(1000*60*60*24));
+var hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+var seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+days+"d "+hours+"h "+minutes+"m "+seconds+"s";
+
+if(distance<0){
+clearInterval(timer);
+document.getElementById("countdown").innerHTML="It's Your Day ❤️";
+}
 },1000);
 
-// Surprise & Final Message
-function showSurprise(){ document.getElementById("surprise").style.display="block"; }
-function showFinal(){ document.getElementById("finalMessage").style.display="block"; }
+function showSurprise(){
+document.getElementById("surprise").style.display="block";
+}
 
-// Floating Hearts
+function showFinal(){
+document.getElementById("finalMessage").style.display="block";
+}
+
+/* Floating hearts */
 setInterval(function(){
-  var heart=document.createElement("div");
-  heart.className="heart";
-  heart.innerHTML="❤️";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.fontSize=(Math.random()*20+15)+"px";
-  document.body.appendChild(heart);
-  setTimeout(()=>{heart.remove();},6000);
-},500);
+var heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+14)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>{heart.remove();},7000);
+},700);
 </script>
+
 </body>
 </html>
